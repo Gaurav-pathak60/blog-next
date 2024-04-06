@@ -4,20 +4,20 @@ import Pagination from "../pagination/Pagination";
 import Image from "next/image";
 import Card from "../card/Card";
 
-const getData = async (page, cat) => {
-  const res = await fetch(
-    `http://localhost:3000/api/posts?page=${page}&cat=${cat || ""}`,
-    {
-      cache: "no-store",
-    }
-  );
+// const getData = async (page, cat) => {
+//   const res = await fetch(
+//     `http://localhost:3000/api/posts?page=${page}&cat=${cat || ""}`,
+//     {
+//       cache: "no-store",
+//     }
+//   );
 
-  if (!res.ok) {
-    throw new Error("Failed");
-  }
+//   if (!res.ok) {
+//     throw new Error("Failed");
+//   }
 
-  return res.json();
-};
+//   return res.json();
+// };
 
 const CardList = async ({ page, cat }) => {
   const { posts, count } = await getData(page, cat);
