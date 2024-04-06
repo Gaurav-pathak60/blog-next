@@ -3,17 +3,17 @@ import styles from "./singlePage.module.css";
 import Image from "next/image";
 import Comments from "@/components/comments/Comments";
 
-// const getData = async (slug) => {
-//   const res = await fetch(`http://localhost:3000/api/posts/${slug}`, {
-//     cache: "no-store",
-//   });
+const getData = async (slug) => {
+  const res = await fetch(`https://blog-next-2cax.vercel.app/api/posts/${slug}`, {
+    cache: "no-store",
+  });
 
-//   if (!res.ok) {
-//     throw new Error("Failed");
-//   }
+  if (!res.ok) {
+    throw new Error("Failed");
+  }
 
-//   return res.json();
-// };
+  return res.json();
+};
 
 const SinglePage = async ({ params }) => {
   const { slug } = params;
